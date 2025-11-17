@@ -13,20 +13,30 @@ A simple command-line utility written in Python to resize images to a specified 
 You need to have **Python 3.6 or higher** installed on your system.
 
 ## Installation
-
-1.  **Clone the repository:**
+1.  **Install System Dependencies (Termux/Linux):**
+    
+    If you are using **Termux** or a Linux distribution and encounter an error when installing Pillow, you may need to install system libraries first:
+    
     ```bash
-    git clone [YOUR_REPOSITORY_URL]
-    cd image-resizer-tool
+    # For Termux
+    pkg install -y libjpeg-turbo zlib libpng pkg-config
+    # For Debian/Ubuntu
+    sudo apt install -y libjpeg-dev zlib1g-dev libpng-dev
     ```
 
-2.  **Create a virtual environment (recommended):**
+2.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/zyexro/image_resizer.git
+    cd image-resizer
+    ```
+
+3.  **Create a virtual environment (recommended):**
     ```bash
     python3 -m venv venv
     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     ```
 
-3.  **Install dependencies:**
+4.  **Install dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
@@ -66,7 +76,3 @@ This tool relies on the following Python package:
 | `Pillow` | Image processing functionality |
 
 The exact version requirements are listed in `requirements.txt`.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details (Note: A LICENSE file is not included in this initial setup, but is recommended for open-source projects).
